@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  dashboard:
+    container_name: dashboard
+    image: devflexpro/spread-watcher-dashboard:latest
+  ports:
+    - 3000:3000
+  mongodb:
+    container_name: mongodb
+    image: mongo:7.0
+    command: mongod --noauth
+    logging:
+        options:
+          max-size: "200k"
+          max-file: "10"
+    #ports:
+    #  - 27017:27017
