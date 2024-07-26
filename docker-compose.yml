@@ -1,5 +1,22 @@
 version: '3.8'
 services:
+  watcher:
+    container_name: watcher
+    image: devflexpro/spread-watcher-backend:latest
+    logging:
+        options:
+          max-size: "200k"
+          max-file: "10"
+    environment: 
+      - DEBUG_MODE: true
+      - BINANCE_API_KEY: 6sXMRvvFBADvXeFP5NsHWKmh8F0IISrtKtRgvu6LgZXWHjPrMYX1YYfUdhFt5xLL
+      - BINANCE_API_SECRET: xImDnuc8IeYWKc5H0ZxVC8rlSTIaSSI48yk9S8dduEbX9duN3tCbM0ERUfgMudGn
+      - SPREAD_MINIMAL: 0
+      - QUANTITY_MINIMAL_USDT: 10
+      - DB_HOST: mongodb
+      - DB_PORT: 27017
+      - DB_NAME: watcher_data
+      - DB_COLLECTION: spreads
   dashboard:
     container_name: dashboard
     image: devflexpro/spread-watcher-dashboard:latest
