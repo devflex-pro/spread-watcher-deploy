@@ -8,22 +8,22 @@ services:
           max-size: "200k"
           max-file: "10"
     environment: 
-      - DEBUG_MODE: true
-      - BINANCE_API_KEY: 6sXMRvvFBADvXeFP5NsHWKmh8F0IISrtKtRgvu6LgZXWHjPrMYX1YYfUdhFt5xLL
-      - BINANCE_API_SECRET: xImDnuc8IeYWKc5H0ZxVC8rlSTIaSSI48yk9S8dduEbX9duN3tCbM0ERUfgMudGn
-      - SPREAD_MINIMAL: 0
-      - QUANTITY_MINIMAL_USDT: 10
-      - DB_HOST: mongodb
-      - DB_PORT: 27017
-      - DB_NAME: watcher_data
-      - DB_COLLECTION: spreads
+      DEBUG_MODE: true
+      BINANCE_API_KEY: 6sXMRvvFBADvXeFP5NsHWKmh8F0IISrtKtRgvu6LgZXWHjPrMYX1YYfUdhFt5xLL
+      BINANCE_API_SECRET: xImDnuc8IeYWKc5H0ZxVC8rlSTIaSSI48yk9S8dduEbX9duN3tCbM0ERUfgMudGn
+      SPREAD_MINIMAL: 0
+      QUANTITY_MINIMAL_USDT: 10
+      DB_HOST: mongodb
+      DB_PORT: 27017
+      DB_NAME: watcher_data
+      DB_COLLECTION: spreads
   dashboard:
     container_name: dashboard
     image: devflexpro/spread-watcher-dashboard:latest
     ports:
       - 3000:3000
     environment: 
-      - SECRET_KEY_BASE: 629a95a7e255e6adfeecc7e97752da3740a183ec8c188a0120c7c8f6d60a7496a67fc168ce046e1dc2016c42f402fc3e1b3a97629e2e969c8424d3bf3e2ab8a2
+      SECRET_KEY_BASE: 629a95a7e255e6adfeecc7e97752da3740a183ec8c188a0120c7c8f6d60a7496a67fc168ce046e1dc2016c42f402fc3e1b3a97629e2e969c8424d3bf3e2ab8a2
   mongodb:
     container_name: mongodb
     image: mongo:7.0
