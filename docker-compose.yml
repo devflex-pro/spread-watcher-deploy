@@ -2,7 +2,7 @@ version: '3.8'
 services:
   watcher:
     container_name: watcher
-    image: devflexpro/spread-watcher-backend:latest
+    image: scallme/spread-watcher-backend:latest
     logging:
         options:
           max-size: "200k"
@@ -26,7 +26,7 @@ services:
       DB_COLLECTION: spreads
   dashboard:
     container_name: dashboard
-    image: devflexpro/spread-watcher-dashboard:latest
+    image: scallme/spread-watcher-dashboard:latest
     ports:
       - 3000:3000
     environment: 
